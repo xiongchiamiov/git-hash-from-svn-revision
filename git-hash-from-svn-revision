@@ -1,0 +1,9 @@
+#!/bin/bash -e
+
+# git intercepts --help, but we can at least check for -h.
+if [ $# -ne 1 ] || [ "$1" = -h ]; then
+   echo 'Usage: git hash-from-svn-revision [revision]'
+   exit 1
+fi
+git log --grep "git-svn-id: .*trunk@$1"
+
