@@ -5,5 +5,5 @@ if [ $# -ne 1 ] || [ "$1" = -h ]; then
    echo 'Usage: git hash-from-svn-revision [revision]'
    exit 1
 fi
-git log --grep "git-svn-id: .*trunk@$1"
+git log --grep "git-svn-id: .*trunk@$1 "
 
